@@ -34,6 +34,7 @@ contract("People", async function(accounts){
 
     let result = await instance.getPerson();
 
+    console.log("result:", result);
     console.log("age of queried person:", result.age.toNumber());
 
     assert(result.age.toNumber() !== 0, "Person deleted by non-owner");
