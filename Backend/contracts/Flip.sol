@@ -12,7 +12,7 @@ contract Flip is Ownable {
       if (random() == 1)
       {
         balance -= betAmmount;
-        msg.sender.transfer(betAmmount);
+        msg.sender.transfer(betAmmount*2);
       }
       else
       {
