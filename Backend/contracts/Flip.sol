@@ -3,7 +3,7 @@ pragma solidity 0.5.12;
 
 contract Flip is Ownable {
 
-    uint public balance = 20000000000000000000;//paresInt(web3.utils.toWei('20',"ether"));
+    uint public balance = 5000000000000000000;//paresInt(web3.utils.toWei('20',"ether"));
 
     function flipCoin() public payable {
 
@@ -22,6 +22,10 @@ contract Flip is Ownable {
 
     function random() private returns(uint) {
       return now % 2;
+    }
+
+    function getUserDetails() public view returns(uint balance, address userAddress){
+      return (msg.sender.balance, msg.sender);
     }
 
     function withdrawAll() public onlyOwner returns(uint) {
