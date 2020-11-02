@@ -39,6 +39,26 @@ var abi = [
     "type": "function"
   },
   {
+    "constant": true,
+    "inputs": [],
+    "name": "getUserDetails",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "balance",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "userAddress",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "constant": false,
     "inputs": [],
     "name": "withdrawAll",
