@@ -9,6 +9,10 @@ contract("Flip", async function(accounts){
     instance = await Flip.deployed();
   });
 
+  it("should fail bet if bet ammount is larger than contract balance", async function(){
+    await truffleAssert.fails(instance.flipCoin(1, {value: web3.utils.toWei("10","ether"), from: accounts[1]}), truffleAssert.ErrorType.REVERT);
+  });
+
   it("should return no ammount or double the ammount sent", async function(){
 
     var initialBalance = web3.utils.fromWei(await instance.balance(),"milliether");
