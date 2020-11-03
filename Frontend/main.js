@@ -47,10 +47,10 @@ function getUserBalance(){
 
   let balance;
   web3.eth.getBalance(acc[0]).then((bal) => {
-      $("#eth_ammount").text(web3.utils.fromWei(bal));
+      $("#eth_ammount").text(web3.utils.fromWei(bal) + " ETH");
       $("#eth_address").text(acc[0]);
     });
   web3.eth.getBalance(contractAddress).then((bal) => {
-      $("#contract_ballance").text(web3.utils.fromWei(bal));
+      $("#contract_ballance").text(web3.utils.fromWei(bal)+ " ETH");
     });
 }
