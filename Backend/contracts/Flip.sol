@@ -3,7 +3,7 @@ pragma solidity 0.5.12;
 
 contract Flip is Ownable {
 
-    uint public balance = address(this).balance;//paresInt(web3.utils.toWei('20',"ether"));
+    uint public balance = address(this).balance;
 
     function flipCoin(uint betOption) public payable {
 
