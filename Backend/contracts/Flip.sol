@@ -10,18 +10,15 @@ contract Flip is Ownable {
       require(msg.value < balance, "bet ammount must be lower than contract balance");
 
       uint betAmmount = msg.value;
-      bool outcome;
 
       if (random() == betOption)
       {
         balance -= betAmmount;
         msg.sender.transfer(betAmmount*2);
-        outcome = true;
       }
       else
       {
         balance += betAmmount;
-        outcome = false;
       }
     }
 
